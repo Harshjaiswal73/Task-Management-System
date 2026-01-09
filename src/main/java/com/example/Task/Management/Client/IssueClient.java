@@ -12,9 +12,9 @@ import com.example.Task.Management.Enum.IssueStatus;
 public interface IssueClient {
 
 	@PutMapping("/{id}/status")
-	void status(@PathVariable Long id,@RequestParam IssueStatus status,@RequestParam String performedBy); 
+	void updateStatus(@PathVariable Long id,@RequestParam IssueStatus status,@RequestParam String performedBy); 
 		
 	@PostMapping("/{id}/commit")
-	void commit(@PathVariable Long id,@RequestParam String author,@RequestParam String body);
+	void addCommit(@PathVariable Long id,@RequestParam String author,@RequestParam String body);
 	
 }
